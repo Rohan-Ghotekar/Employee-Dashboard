@@ -1,0 +1,361 @@
+/* ================= GLOBAL RESET ================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  color: #eef2ff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+.app-navbar {
+  width: 100%;
+  background: black;
+  border-bottom: 1px solid #222;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.8rem 1.5rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.nav-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #eef2ff;
+}
+
+.nav-right {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #eef2ff;
+
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+.nav-btn:hover {
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  border-color: transparent;
+  color: black;
+}
+
+/* ================= HOME PAGE ================= */
+.home-page {
+  height: calc(100vh - 60px);
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.home-title {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin-bottom: 10rem;
+
+  color: #eef2ff;
+  transition: all 0.3s ease;
+}
+
+.home-title:hover {
+  transform: scale(1.05);
+  color: #22d3ee;
+  text-shadow: 0 0 25px rgba(34, 211, 238, 0.6);
+}
+
+.home-login-btn {
+  margin-top: -3rem;
+  padding: 0.7rem 2.2rem;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: black;
+
+  transition: all 0.25s ease;
+}
+
+.home-login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
+}
+
+/* ================= COMPANY HEADER ================= */
+.company-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+}
+
+.company-text h4 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.company-text small {
+  color: #eef2ff;
+}
+
+/* ================= EMPLOYEE CONTAINER ================= */
+.employee-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1.5rem; 
+  padding: 1.5rem;
+}
+
+
+
+/* ================= EMPLOYEE CARD ================= */
+/* ⚠️ CARD SIZE NOT CHANGED */
+.employee-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc(33.333% - 1.5rem);
+  max-width: calc(33.333% - 3.5rem);
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  border-radius: 14px;
+  padding: 1.2rem;
+  color: black;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+
+}
+
+.employee-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px whitesmoke;
+}
+
+/* Image */
+.employee-card img {
+  width: 90px;
+  height: 90px;
+
+  object-fit: cover;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  padding: 3px;
+  border-radius: 50%;
+
+  margin-bottom: 0.8rem;
+}
+
+/* Name */
+.employee-card h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .employee-card {
+    flex: 0 0 calc(50% - 1.5rem);
+    max-width: calc(50% - 1.5rem);
+  }
+
+  .home-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .employee-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .home-title {
+    font-size: 2.5rem;
+  }
+
+  .company-header {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ===== GLOBAL FIX ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===== HOME PAGE ===== */
+.home-wrapper {
+  width: 100vw;
+  height: calc(100vh - 56px); /* navbar height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+.home-content {
+  text-align: center;
+}
+
+.home-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 2px;
+  transition: all 0.4s ease;
+}
+
+.home-title:hover {
+  color: #0d6efd;
+  transform: scale(1.05);
+  text-shadow: 0 0 25px rgba(13, 110, 253, 0.8);
+}
+
+.home-login-btn {
+  margin-top: 30px;
+  padding: 12px 40px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.home-login-btn:hover {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  transform: translateY(-3px);
+}
+
+/* ================= LOGIN PAGE ================= */
+.login-wrapper {
+  width: 100vw;
+  height: calc(100vh - 56px); /* adjust for navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+.login-card {
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.3);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: black;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: black;
+  transition: all 0.25s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
+}
